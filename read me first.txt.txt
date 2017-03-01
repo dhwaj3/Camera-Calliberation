@@ -1,0 +1,13 @@
+hello sir 
+
+Sir please open the main.m file and put object1.jpg or object2.jpg and run it it will detect the pen by some error 
+
+group members
+
+ihc2016001
+ihc2016003
+ihc2016005
+ihc2016006
+ihc2016008
+ihc2016009
+ihc2016010

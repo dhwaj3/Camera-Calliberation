@@ -3,13 +3,13 @@ close all;
 clc;
 clear all;
 
-%% Loading Calibration Result for samsung E5 camera
+%% Loading Calibration Result for moto g4 plus camera
 
 load('Calib_Results.mat');
 
 %% Reading input image containing object
 
-img=imread('object.jpg');
+img=imread('object1.jpg');
 A=rgb2gray(img);
 %figure; imshow(A, 'InitialMagnification', 50);
 %title('Input Image');
@@ -83,11 +83,11 @@ penLengthCalc=BB1(4)/ppm;
 penLengthActual=154.25; % In mm
 errorPercent=abs(penLengthCalc-penLengthActual)/penLengthCalc*100;
 output_str=cell(3,1);
-output_str{1}= ['Actual Pen Length:' num2str(penLengthActual) 'mm'];
-output_str{2}= ['Calculated Pen Length:' num2str(penLengthCalc,'%0.2f') 'mm'];
-output_str{3}= ['Percentage Error:' num2str(errorPercent,'%0.2f') '%.'];
+output_str{1}= ['Real  Pen Length:' num2str(penLengthActual) 'mm'];
+output_str{2}= ['Predicted  Pen Length:' num2str(penLengthCalc,'%0.2f') 'mm'];
+output_str{3}= [' Error %:' num2str(errorPercent,'%0.2f') '%.'];
 position=[0 100;0 150;0 200];
-RGB=insertText(img,position,output_str,'FontSize',40,'TextColor','red');
+RGB=insertText(img,position,output_str,'FontSize',40,'TextColor','Red');
 figure,imshow(RGB,'InitialMagnification',33),title('Output');
 rectangle('Position', [BB1(1),BB1(2),BB1(3),BB1(4)],'EdgeColor','y','LineWidth',2 );
 rectangle('Position', [BB2(1),BB2(2),BB2(3),BB2(4)],'EdgeColor','y','LineWidth',2 );
